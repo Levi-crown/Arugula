@@ -2,10 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* imports mo */
 @import './fonts.css';
 @import './theme.css';
-/* Color Variables */
+
 :root {
   --primary-green: #14532d;
   --accent-green: #22c55e;
