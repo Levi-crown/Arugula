@@ -9,13 +9,13 @@ import { ManageAccountPage } from "./pages/ManageAccountPage";
 export const router = createHashRouter([
   {
     path: "/",
-    Component: RootLayout,
+    element: <RootLayout />, // ✅ DAPAT element
     children: [
-      { index: true, Component: DashboardPage },
-      { path: "sensors", Component: SensorsPage },
-      { path: "irrigation", Component: IrrigationPage },
-      { path: "cultivation", Component: CultivationPage },
-      { path: "manage-account", Component: ManageAccountPage },
+      { index: true, element: <DashboardPage /> }, // ✅
+      { path: "sensors", element: <SensorsPage /> },
+      { path: "irrigation", element: <IrrigationPage /> },
+      { path: "cultivation", element: <CultivationPage /> },
+      { path: "manage-account", element: <ManageAccountPage /> },
     ],
   },
 ]);
