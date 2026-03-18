@@ -9,9 +9,9 @@ import { ManageAccountPage } from "./pages/ManageAccountPage";
 export const router = createHashRouter([
   {
     path: "/",
-    element: <RootLayout />, // ✅ DAPAT element
+    element: <RootLayout />, 
     children: [
-      { index: true, element: <DashboardPage /> }, // ✅
+      { index: true, element: <DashboardPage /> }, 
       { path: "sensors", element: <SensorsPage /> },
       { path: "irrigation", element: <IrrigationPage /> },
       { path: "cultivation", element: <CultivationPage /> },

@@ -1,7 +1,10 @@
-@import './fonts.css';
-@import './tailwind.css';
-@import './theme.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* imports mo */
+@import './fonts.css';
+@import './theme.css';
 /* Color Variables */
 :root {
   --primary-green: #14532d;
