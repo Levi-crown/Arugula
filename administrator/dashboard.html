@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArCuGreen Login</title>
+    <link rel="stylesheet" href="./login.css" />
+    <script>
+      if (window.sessionStorage.getItem("arugula.isAuthenticated") === "true") {
+        const savedHash = window.sessionStorage.getItem("arugula.postLoginHash") || "#/";
+        window.location.replace(`./index.html${savedHash}`);
+      }
+    </script>
+  </head>
+  <body>
+    <main class="login-page">
+      <section class="login-shell">
+        <article class="login-panel">
+          <div class="login-panel__brand">
+            <img
+              class="login-panel__logo"
+              src="../assets/arucugreen-logo.png"
+              alt="ArCuGreen Logo"
+            />
+            <p class="login-panel__eyebrow">Smart Agriculture</p>
+            <h1 class="login-panel__title" id="auth-title">Login to ArCuGreen</h1>
+            <p class="login-panel__copy" id="auth-copy">
+              Access your farm dashboard and monitoring controls.
+            </p>
+          </div>
+
+          <div id="auth-panel-body"></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="./forgot-password.js" defer></script>
+    <script src="./login.js" defer></script>
+  </body>
+</html>

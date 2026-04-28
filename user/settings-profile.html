@@ -1,0 +1,76 @@
+<section class="page-stack settings-profile-layout">
+  <article class="glass-card card settings-section-card settings-section-card--profile">
+    <div class="settings-profile-header">
+      <div class="settings-profile-copy">
+        <div>
+          <h3 class="section-title">Edit Profile</h3>
+          <p class="section-copy">Update your account details below.</p>
+        </div>
+        <div class="chip-row settings-profile-chips">
+          {{PROFILE_ROLE_BADGE}}
+          <span class="chip">Secure Account</span>
+        </div>
+      </div>
+
+      <div class="settings-profile-identity">
+        <div
+          class="avatar-circle settings-profile-avatar"
+          id="settings-avatar-preview"
+        >
+          {{PROFILE_INITIAL}}
+        </div>
+        <input id="profile-photo-input" type="file" accept="image/*" hidden />
+        <button class="button button--secondary settings-profile-photo-button" type="button" data-action="change-profile-photo">
+          {{CAMERA_ICON}}
+          <span>{{PHOTO_BUTTON_LABEL}}</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="field-grid input-grid--two settings-profile-fields">
+      <div class="field">
+        <label class="field__label" for="profile-name-input">Full Name</label>
+        <input class="input" id="profile-name-input" type="text" value="{{PROFILE_NAME}}" />
+      </div>
+
+      <div class="field">
+        <label class="field__label" for="profile-role-input">Role</label>
+        <input class="input" id="profile-role-input" type="text" value="{{PROFILE_ROLE}}" readonly />
+      </div>
+    </div>
+
+    <div class="settings-profile-actions">
+      <button class="button button--primary settings-profile-save" type="button" data-action="save-profile">
+        Save Profile
+      </button>
+    </div>
+  </article>
+
+  <article class="glass-card card settings-section-card settings-section-card--password">
+    <div class="inline-copy settings-section-card__title">
+      <span class="nav-button__icon">{{LOCK_ICON}}</span>
+      <div>
+        <h4 class="section-title">Change Password</h4>
+        <p class="section-copy">Update your password and confirm it with a 6-digit code.</p>
+      </div>
+    </div>
+    <div class="field-grid input-grid--two">
+      <div class="field">
+        <label class="field__label" for="current-password-input">Current Password</label>
+        <input class="input" id="current-password-input" type="password" value="{{CURRENT_PASSWORD}}" />
+      </div>
+      <div class="field">
+        <label class="field__label" for="new-password-input">New Password</label>
+        <input class="input" id="new-password-input" type="password" value="{{NEW_PASSWORD}}" />
+      </div>
+    </div>
+    <button
+      class="button button--dark button--full"
+      type="button"
+      data-action="change-password"
+      {{CHANGE_PASSWORD_DISABLED}}
+    >
+      Change Password
+    </button>
+  </article>
+</section>

@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ArCuGreen Dashboard</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script>
+      const authKey = "arugula.user.isAuthenticated";
+      const postLoginHashKey = "arugula.user.postLoginHash";
+
+      if (window.sessionStorage.getItem(authKey) !== "true") {
+        window.sessionStorage.setItem(postLoginHashKey, window.location.hash || "#/");
+        window.location.replace("./dashboard.html");
+      }
+    </script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="glass-card glass-card--dark sidebar__brand">
+          <div class="brand-lockup">
+            <img
+              class="brand-lockup__logo"
+              src="../assets/arucugreen-logo.png"
+              alt="ArCuGreen Logo"
+            />
+            <div>
+              <p class="brand-lockup__title">ArCuGreen</p>
+              <p class="brand-lockup__subtitle">Smart Agriculture</p>
+            </div>
+          </div>
+        </div>
+
+        <nav class="sidebar__nav" id="sidebar-nav" aria-label="Primary"></nav>
+
+        <div class="sidebar__actions">
+          <button class="nav-button" type="button" data-action="open-settings">
+            <span class="nav-button__icon" aria-hidden="true"></span>
+            <span>Settings</span>
+          </button>
+          <button
+            class="nav-button nav-button--danger"
+            type="button"
+            data-action="logout"
+          >
+            <span class="nav-button__icon" aria-hidden="true"></span>
+            <span>Logout</span>
+          </button>
+        </div>
+      </aside>
+
+      <section class="app-main">
+        <header class="glass-card topbar">
+          <div>
+            <h1 class="topbar__title">Welcome to ArCuGreen</h1>
+            <p class="topbar__subtitle">Monitor and control your smart farm</p>
+          </div>
+
+          <div class="topbar__actions">
+            <button
+              class="icon-button notification-button"
+              type="button"
+              data-action="open-notifications"
+              id="header-notification-button"
+              aria-label="Open notifications"
+            >
+              <span
+                class="nav-button__icon"
+                id="header-notification-icon"
+                aria-hidden="true"
+              ></span>
+              <span
+                class="notification-button__badge"
+                id="header-notification-count"
+                hidden
+                >0</span
+              >
+            </button>
+
+            <div
+              class="profile-pill profile-pill--button"
+              role="button"
+              tabindex="0"
+              data-action="open-profile-settings"
+              aria-label="Open edit profile"
+            >
+              <div class="profile-pill__copy">
+                <span class="profile-pill__name" id="header-profile-name"
+                  >User 1</span
+                >
+                <span class="profile-pill__role" id="header-profile-role"
+                  >User</span
+                >
+              </div>
+              <div
+                class="profile-pill__avatar"
+                id="header-profile-avatar"
+                aria-hidden="true"
+              ></div>
+            </div>
+          </div>
+        </header>
+
+        <main class="page-content" id="page-content" aria-live="polite"></main>
+      </section>
+    </div>
+
+    <div id="overlay-root"></div>
+    <div class="toast-stack" id="toast-root" aria-live="polite"></div>
+
+    <script src="./settings-profile.js" defer></script>
+    <script src="./settings-about.js" defer></script>
+    <script src="./settings-developers.js" defer></script>
+    <script src="./notifications.js" defer></script>
+    <script src="./sensor-detail.js" defer></script>
+    <script src="./manage-users.js" defer></script>
+    <script src="./app.js" defer></script>
+  </body>
+</html>
+  

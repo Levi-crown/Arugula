@@ -1,15 +1,19 @@
-
-  <!DOCTYPE html>
-  <html lang="en">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Web Dashboard UI Design</title>
-    </head>
-
-    <body>
-      <div id="root"></div>
-      <script type="module" src="/src/main.tsx"></script>
-    </body>
-  </html>
-  
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=./administrator/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting to Administrator</title>
+    <script>
+      (function redirectToAdministrator() {
+        const query = window.location.search || "";
+        const hash = window.location.hash || "";
+        window.location.replace(`./administrator/${query}${hash}`);
+      })();
+    </script>
+  </head>
+  <body>
+    Redirecting to Administrator...
+  </body>
+</html>
